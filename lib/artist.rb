@@ -6,21 +6,24 @@ class Artist
     def initialize(name)
         @name = name
     end
+
     def songs
-        Song.all
+        Song.all #we are calling Song class in the song.rb file
     end
+
     def add_song(song)
-       song.artist = self
+        song.artist = self
     end
-    def add_song_by_name(song_name)
-        song = Song.new(song_name)
-        add_song(song)
+
+    def add_song_by_name(name)
+        song = Song.new(name)
+        song.artist = self
     end
+
     def self.song_count
         Song.all.count
     end
 
-        
 
-
+    
 end
